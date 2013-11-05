@@ -344,7 +344,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		exec( 'find ' . dirname( __FILE__ ) . '/zip/ -type f -name "*.zip" -mindepth 1 -maxdepth 1 -mmin +60 -exec rm {} \;' );
 
 		if ( $download ) {
-			header( 'Location: ' . $zip_url );
+			header( 'Location: ' . substr($zip_url, 1) );
 			exit;
 		}
 
